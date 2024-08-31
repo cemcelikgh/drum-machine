@@ -44,12 +44,12 @@ function Panel({
         min="0" max="1"
         step="0.01"
         value={volume}
-        onChange={handleVolumeChange}
+        onChange={power ? handleVolumeChange : null}
       />
       <i className={`fa-solid fa-arrow-right-arrow-left
         ${kit[0].name === 'Heater-1' ? 'drum-kit' : 'piano-kit'}`
       }
-        onClick={toggleKit}
+        onClick={power ? toggleKit : null}
       ></i>
       <p>BANK</p>
     </div>

@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 function Keycap({power, sound, setSoundName}) {
 
-  function playSound(sound) {
+  const playSound = useCallback((sound) => {
     const track = document.getElementById(sound.key);
     track.currentTime = 0;
     track.play();
@@ -12,35 +12,29 @@ function Keycap({power, sound, setSoundName}) {
     setTimeout(() => {
       btn.classList.remove(`${sound.key.toLowerCase()}-key-color`);
     }, 200);
-  };
+  }, [setSoundName]);
 
   useEffect(() => {
-    document.addEventListener('keydown',
-      (event) => {
-        if (event.key.toUpperCase() === sound.key) {
-          playSound(sound);
-        }
-      }
-    )
-  }, []);
+    const handleKeydown = (event) => {
+      if (power && event.key.toUpperCase() === sound.key) {
+        playSound(sound);
+      };
+    };
+    document.addEventListener('keydown', handleKeydown)
+    return () => {document.removeEventListener('keydown', handleKeydown)}
+  }, [power, playSound, sound]);
 
   return (
     <button id={`${sound.key}-btn`}
       className="drum-pad russo-one-regular"
       onClick={() => {playSound(sound)}}
+      disabled={!power}
     >
-      {power && (
-        <audio id={sound.key}
-          className="clip"
-          src={sound.audio}
-        ></audio>
-      )}
-      {!power && (
-        <audio id={sound.key}
-          className="clip"
-          src={null}
-        ></audio>
-      )}
+      <audio id={sound.key}
+        className="clip"
+        src={sound.audio}
+        preload="auto"
+      ></audio>
       {sound.key}
     </button>
   );
