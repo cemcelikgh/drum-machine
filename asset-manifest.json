@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/drum-machine/static/css/main.cdc3a72d.css",
+    "main.js": "/drum-machine/static/js/main.567e4a6b.js",
+    "static/media/RussoOne-Regular.ttf": "/drum-machine/static/media/RussoOne-Regular.b2f5b287ccb8fd446eae.ttf",
+    "index.html": "/drum-machine/index.html",
+    "main.cdc3a72d.css.map": "/drum-machine/static/css/main.cdc3a72d.css.map",
+    "main.567e4a6b.js.map": "/drum-machine/static/js/main.567e4a6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdc3a72d.css",
+    "static/js/main.567e4a6b.js"
+  ]
+}
