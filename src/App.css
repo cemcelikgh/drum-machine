@@ -6,6 +6,11 @@
   border-radius: 10px;
 }
 
+@font-face {
+  font-family: "Russo One";
+  src: url('../public/assets/fonts/RussoOne-Regular.ttf') format('truetype');
+}
+
 .russo-one-regular {
   font-family: "Russo One", sans-serif;
   font-size: 1.5rem;
@@ -138,6 +143,7 @@ p {
 
 input[type=range] {
   -webkit-appearance: none;
+  appearance: none;
   margin: 15px 0;
   width: 175px;
 }
