@@ -16,6 +16,14 @@ fontawesome/
 <br>Jul 2024
 <br><https://fontawesome.com/v6/download>
 
+Range input
+<br>Feb 2025
+<br><https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/>
+
 freeCodeCamp Glyph icon
 <br>Aug 2024
 <br><https://design-style-guide.freecodecamp.org/>
+
+gh-pages
+<br>Aug 2024
+<br><https://github.com/gitname/react-gh-pages>

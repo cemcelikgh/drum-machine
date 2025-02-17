@@ -19,15 +19,14 @@ function Panel({
   };
 
   function handleVolumeChange(event) {
-    setVolume(event.target.value);
+    const newVolume = event.target.value;
+    setVolume(newVolume);
     [...document.getElementsByTagName('audio')]
-      .forEach(audio => {audio.volume = volume});
-    setDisplayText(`Volume: ${Math.round(volume * 101)}%`);
+      .forEach(audio => {audio.volume = newVolume});
+    setDisplayText(`Volume: ${Math.round(newVolume * 100)}%`);
   };
 
-  useEffect(() => {
-    setDisplayText(soundName);
-  }, [soundName]);
+  useEffect(() => { setDisplayText(soundName) }, [soundName]);
 
   return (
     <div className="panel">
@@ -44,12 +43,12 @@ function Panel({
         min="0" max="1"
         step="0.01"
         value={volume}
-        onChange={power ? handleVolumeChange : null}
+        onChange={power ? handleVolumeChange : undefined}
       />
       <i className={`fa-solid fa-arrow-right-arrow-left
         ${kit[0].name === 'Heater-1' ? 'drum-kit' : 'piano-kit'}`
       }
-        onClick={power ? toggleKit : null}
+        onClick={power ? toggleKit : undefined}
       ></i>
       <p>BANK</p>
     </div>
